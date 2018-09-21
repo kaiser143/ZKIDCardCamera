@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'ZKIDCardCamera_Example' do
+  pod 'ZKIDCardCamera', :path => '../'
+
+  target 'ZKIDCardCamera_Tests' do
+    inherit! :search_paths
+
+    pod 'FBSnapshotTestCase'
+  end
+end
