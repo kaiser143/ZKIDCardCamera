@@ -5,9 +5,8 @@
 [![License](https://img.shields.io/cocoapods/l/ZKIDCardCamera.svg?style=flat)](https://cocoapods.org/pods/ZKIDCardCamera)
 [![Platform](https://img.shields.io/cocoapods/p/ZKIDCardCamera.svg?style=flat)](https://cocoapods.org/pods/ZKIDCardCamera)
 
-![avatar](https://pic1.zhimg.com/aadd7b895_xs.jpg)
-![1](https://github.com/kaiser143/ZKIDCardCamera/blob/master/screenshot/IMG_8164.PNG)
-![2](/screenshot/IMG_8EB34B03F1DD-1.jpeg)
+![正面](https://github.com/kaiser143/ZKIDCardCamera/blob/master/screenshot/1.jpg)
+![反面](https://github.com/kaiser143/ZKIDCardCamera/blob/master/screenshot/2.jpg)
 
 ## Example
 
