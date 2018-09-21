@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0FEF50C86F99B51CA7DBB4A6 /* Pods_ZKIDCardCamera_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D86C257A9A9AF01CFD1651F /* Pods_ZKIDCardCamera_Example.framework */; };
+		4B92E1D02154ECD800E2705C /* ZKIDCardCamera.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B92E1CF2154ECD800E2705C /* ZKIDCardCamera.framework */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -39,6 +40,7 @@
 /* Begin PBXFileReference section */
 		1D86C257A9A9AF01CFD1651F /* Pods_ZKIDCardCamera_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZKIDCardCamera_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		41CA69367C3A2BDE865F9210 /* Pods-ZKIDCardCamera_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZKIDCardCamera_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZKIDCardCamera_Example/Pods-ZKIDCardCamera_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		4B92E1CF2154ECD800E2705C /* ZKIDCardCamera.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ZKIDCardCamera.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DB6E3485581C60D5E2485FA /* Pods-ZKIDCardCamera_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZKIDCardCamera_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZKIDCardCamera_Example/Pods-ZKIDCardCamera_Example.release.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* ZKIDCardCamera_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZKIDCardCamera_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -62,10 +64,10 @@
 		669D959CA31B90840D1A6E2B /* Pods-ZKIDCardCamera_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZKIDCardCamera_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZKIDCardCamera_Tests/Pods-ZKIDCardCamera_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		6AD4F82708B7841754FC92E1 /* Pods-ZKIDCardCamera_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZKIDCardCamera_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZKIDCardCamera_Tests/Pods-ZKIDCardCamera_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		744FE23AE340E7AF9274056D /* ZKIDCardCamera.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = ZKIDCardCamera.podspec; path = ../ZKIDCardCamera.podspec; sourceTree = "<group>"; };
+		744FE23AE340E7AF9274056D /* ZKIDCardCamera.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = ZKIDCardCamera.podspec; path = ../ZKIDCardCamera.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A1875F567A73EFB0B1C71221 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		AA9AA4C2BA3FE675B4475BD5 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		A1875F567A73EFB0B1C71221 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		AA9AA4C2BA3FE675B4475BD5 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		F06045B9892FCD3CA35C3212 /* Pods_ZKIDCardCamera_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZKIDCardCamera_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -74,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B92E1D02154ECD800E2705C /* ZKIDCardCamera.framework in Frameworks */,
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
@@ -119,6 +122,7 @@
 		6003F58C195388D20070C39A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4B92E1CF2154ECD800E2705C /* ZKIDCardCamera.framework */,
 				6003F58D195388D20070C39A /* Foundation.framework */,
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
@@ -208,6 +212,7 @@
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
 				93A781F185487F698AFC8AE9 /* [CP] Embed Pods Frameworks */,
+				4B92E1C72154E1C400E2705C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -248,6 +253,10 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "deyang143@126.com";
 				TargetAttributes = {
+					6003F589195388D20070C39A = {
+						DevelopmentTeam = G4A8Z77QP2;
+						ProvisioningStyle = Manual;
+					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
 					};
@@ -317,6 +326,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		4B92E1C72154E1C400E2705C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "REVEAL_APP_PATH=$(mdfind kMDItemCFBundleIdentifier=\"com.ittybittyapps.Reveal2\" | head -n 1)\nBUILD_SCRIPT_PATH=\"${REVEAL_APP_PATH}/Contents/SharedSupport/Scripts/reveal_server_build_phase.sh\"\nif [ \"${REVEAL_APP_PATH}\" -a -e \"${BUILD_SCRIPT_PATH}\" ]; then\n\"${BUILD_SCRIPT_PATH}\"\nelse\necho \"Reveal Server not loaded: Cannot find a compatible Reveal app.\"\nfi\n\n";
+		};
 		9134AF20D12E2E1E4209BE9E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -348,12 +374,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ZKIDCardCamera_Example/Pods-ZKIDCardCamera_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/ZKIDCardCamera/ZKIDCardCamera.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZKIDCardCamera.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -520,12 +548,15 @@
 			baseConfigurationReference = 41CA69367C3A2BDE865F9210 /* Pods-ZKIDCardCamera_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = G4A8Z77QP2;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ZKIDCardCamera/ZKIDCardCamera-Prefix.pch";
 				INFOPLIST_FILE = "ZKIDCardCamera/ZKIDCardCamera-Info.plist";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rxh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = rxh_Dev;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -535,12 +566,15 @@
 			baseConfigurationReference = 5DB6E3485581C60D5E2485FA /* Pods-ZKIDCardCamera_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ZKIDCardCamera/ZKIDCardCamera-Prefix.pch";
 				INFOPLIST_FILE = "ZKIDCardCamera/ZKIDCardCamera-Info.plist";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rxh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

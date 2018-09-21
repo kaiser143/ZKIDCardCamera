@@ -1,0 +1,31 @@
+PODS:
+  - FBSnapshotTestCase (2.1.4):
+    - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
+  - FBSnapshotTestCase/Core (2.1.4)
+  - FBSnapshotTestCase/SwiftSupport (2.1.4):
+    - FBSnapshotTestCase/Core
+  - Masonry (1.1.0)
+  - ZKIDCardCamera (0.1.0):
+    - Masonry
+
+DEPENDENCIES:
+  - FBSnapshotTestCase
+  - ZKIDCardCamera (from `../`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - FBSnapshotTestCase
+    - Masonry
+
+EXTERNAL SOURCES:
+  ZKIDCardCamera:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  ZKIDCardCamera: eb58f4d93c16ee034088674c1e85f6f51adcd566
+
+PODFILE CHECKSUM: 111669f2d3232deb0c51b157a1e92e1c74b396c7
+
+COCOAPODS: 1.5.3

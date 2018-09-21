@@ -7,6 +7,8 @@
 //
 
 #import "ZKViewController.h"
+#import <Masonry/Masonry.h>
+#import <ZKIDCardCamera/ZKIDCardCameraController.h>
 
 @interface ZKViewController ()
 
@@ -14,16 +16,21 @@
 
 @implementation ZKViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - events Handler
+
+- (IBAction)front {
+    ZKIDCardCameraController *controller = [[ZKIDCardCameraController alloc] initWithType:ZKIDCardTypeFront];
+    [self presentViewController:controller animated:YES completion:nil];
+}
+
+- (IBAction)reverse:(id)sender {
+    ZKIDCardCameraController *controller = [[ZKIDCardCameraController alloc] initWithType:ZKIDCardTypeReverse];
+    [self presentViewController:controller animated:YES completion:nil];
 }
 
 @end
