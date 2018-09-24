@@ -328,6 +328,22 @@
     }];
 }
 
+- (BOOL)prefersStatusBarHidden {
+    return YES;
+}
+
+- (BOOL)shouldAutorotate {
+    return NO;
+}
+
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskPortrait;
+}
+
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
+    return UIInterfaceOrientationPortrait;
+}
+
 #pragma mark - getters and setters
 
 - (UIButton *)photoButton {
