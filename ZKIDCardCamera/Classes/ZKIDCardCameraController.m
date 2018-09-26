@@ -105,24 +105,24 @@
         [again setTitle:@"重拍" forState:UIControlStateNormal];
         [again setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [again addTarget:self action:@selector(takePhotoAgain) forControlEvents:UIControlEventTouchUpInside];
-        again.titleLabel.font = [UIFont systemFontOfSize:15];
+        again.titleLabel.font = [UIFont systemFontOfSize:18];
         again.titleLabel.textAlignment = NSTextAlignmentCenter;
         [self.bottomView addSubview:again];
         [again mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerY.equalTo(self.bottomView);
-            make.left.equalTo(self.bottomView).offset(32);
+            make.left.equalTo(self.bottomView).offset(12);
         }];
         
         UIButton *use = [UIButton buttonWithType:UIButtonTypeCustom];
-        [use setTitle:@"使用图片" forState:UIControlStateNormal];
+        [use setTitle:@"使用照片" forState:UIControlStateNormal];
         [use setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [use addTarget:self action:@selector(usePhoto) forControlEvents:UIControlEventTouchUpInside];
-        use.titleLabel.font = [UIFont systemFontOfSize:15];
+        use.titleLabel.font = [UIFont systemFontOfSize:18];
         use.titleLabel.textAlignment = NSTextAlignmentCenter;
         [self.bottomView addSubview:use];
         [use mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerY.equalTo(self.bottomView);
-            make.right.equalTo(self.bottomView).offset(-32);
+            make.right.equalTo(self.bottomView).offset(-12);
         }];
         
         [self.flashButton mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -169,7 +169,7 @@
     if ([self.delegate respondsToSelector:@selector(cameraDidFinishShootWithCameraImage:)]) {
         [self.delegate cameraDidFinishShootWithCameraImage:self.image];
     }
-    [self cancleButtonAction];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)shutterCamera:(UIButton *)sender {
@@ -328,8 +328,12 @@
     }];
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleDefault;
+}
+
 - (BOOL)prefersStatusBarHidden {
-    return YES;
+    return NO;
 }
 
 - (BOOL)shouldAutorotate {
@@ -378,7 +382,7 @@
 - (UIView *)bottomView {
     if (!_bottomView) {
         _bottomView = [[UIView alloc] init];
-        _bottomView.backgroundColor = [UIColor blackColor];
+        _bottomView.backgroundColor = [UIColor colorWithRed:20/255.f green:20/255.f blue:20/255.f alpha:1];
         _bottomView.hidden = YES;
         
         [self.view addSubview:_bottomView];
