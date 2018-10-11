@@ -68,6 +68,10 @@
 
 @implementation ZKIDCardCameraController
 
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 - (instancetype)initWithType:(ZKIDCardType)type {
     self = [super init];
     if (!self) {
@@ -134,6 +138,11 @@
         UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self
                                                                                      action:@selector(focusGesture:)];
         [self.view addGestureRecognizer:tapGesture];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(subjectAreaDidChange:)
+                                                     name:AVCaptureDeviceSubjectAreaDidChangeNotification
+                                                   object:self.device];
     }
 }
 
@@ -326,6 +335,23 @@
     [IDCardFloatingView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
+}
+
+- (void)subjectAreaDidChange:(NSNotification *)notification {
+    //先进行判断是否支持控制对焦
+    if (self.device.isFocusPointOfInterestSupported
+        &&[self.device isFocusModeSupported:AVCaptureFocusModeAutoFocus]) {
+        NSError *error =nil;
+        //对cameraDevice进行操作前，需要先锁定，防止其他线程访问，
+        [self.device lockForConfiguration:&error];
+        [self.device setFocusMode:AVCaptureFocusModeAutoFocus];
+        
+        CGRect bounds = [UIScreen mainScreen].bounds;
+        CGPoint point = CGPointMake(CGRectGetWidth(bounds)/2.f, CGRectGetHeight(bounds)/2.f);
+        [self focusAtPoint:point];
+        //操作完成后，记得进行unlock。
+        [self.device unlockForConfiguration];
+    }
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
