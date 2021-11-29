@@ -8,6 +8,7 @@
 #import "ZKIDCardCameraController.h"
 #import <AVFoundation/AVFoundation.h>
 #import <Masonry/Masonry.h>
+#import <ZKCategories/ZKCategories.h>
 #import "ZKIDCardFloatingView.h"
 
 @interface ZKIDCardCameraController () <AVCaptureMetadataOutputObjectsDelegate>
@@ -102,7 +103,12 @@
         }];
         [self.bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.width.bottom.equalTo(self.view);
-            make.height.mas_equalTo(64);
+            
+            CGFloat bottom = 0;
+            if (@available(iOS 11, *)) {
+                bottom = [UIApplication sharedApplication].keyWindow.safeAreaInsets.bottom;
+            }
+            make.height.mas_equalTo(64 + bottom);
         }];
         
         UIButton *again = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -113,7 +119,7 @@
         again.titleLabel.textAlignment = NSTextAlignmentCenter;
         [self.bottomView addSubview:again];
         [again mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.centerY.equalTo(self.bottomView);
+            make.top.equalTo(self.bottomView).offset(15);
             make.left.equalTo(self.bottomView).offset(12);
         }];
         
@@ -125,7 +131,7 @@
         use.titleLabel.textAlignment = NSTextAlignmentCenter;
         [self.bottomView addSubview:use];
         [use mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.centerY.equalTo(self.bottomView);
+            make.centerY.equalTo(again);
             make.right.equalTo(self.bottomView).offset(-12);
         }];
         
@@ -149,7 +155,7 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    CGRect bounds = [UIScreen mainScreen].bounds;
+    CGRect bounds = [UIScreen.mainScreen currentBounds];
     CGPoint point = CGPointMake(CGRectGetWidth(bounds)/2.f, CGRectGetHeight(bounds)/2.f);
     [self focusAtPoint:point];
 }
@@ -315,7 +321,7 @@
     
     // 使用self.session，初始化预览层，self.session负责驱动input进行信息的采集，layer负责把图像渲染显示
     self.previewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:self.session];
-    self.previewLayer.frame = (CGRect){CGPointZero, [UIScreen mainScreen].bounds.size};
+    self.previewLayer.frame = (CGRect){CGPointZero, [UIScreen.mainScreen currentBounds].size};
     self.previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
     [self.view.layer addSublayer:self.previewLayer];
     
@@ -346,7 +352,7 @@
         [self.device lockForConfiguration:&error];
         [self.device setFocusMode:AVCaptureFocusModeAutoFocus];
         
-        CGRect bounds = [UIScreen mainScreen].bounds;
+        CGRect bounds = [UIScreen.mainScreen currentBounds];
         CGPoint point = CGPointMake(CGRectGetWidth(bounds)/2.f, CGRectGetHeight(bounds)/2.f);
         [self focusAtPoint:point];
         //操作完成后，记得进行unlock。
@@ -359,7 +365,7 @@
 }
 
 - (BOOL)prefersStatusBarHidden {
-    return NO;
+    return YES;
 }
 
 - (BOOL)shouldAutorotate {

@@ -6,6 +6,6 @@ target 'ZKIDCardCamera_Example' do
   target 'ZKIDCardCamera_Tests' do
     inherit! :search_paths
 
-    pod 'FBSnapshotTestCase'
+#    pod 'FBSnapshotTestCase'
   end
 end

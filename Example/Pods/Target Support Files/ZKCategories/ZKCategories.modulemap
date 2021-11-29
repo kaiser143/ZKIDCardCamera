@@ -1,0 +1,6 @@
+framework module ZKCategories {
+  umbrella header "ZKCategories-umbrella.h"
+
+  export *
+  module * { export * }
+}

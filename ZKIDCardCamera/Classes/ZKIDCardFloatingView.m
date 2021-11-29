@@ -7,6 +7,7 @@
 
 #import "ZKIDCardFloatingView.h"
 #import <Masonry/Masonry.h>
+#import <ZKCategories/ZKCategories.h>
 #import "ZKIDCardCameraController.h"
 
 // iPhone5/5c/5s/SE 4英寸 屏幕宽高：320*568点 屏幕模式：2x 分辨率：1136*640像素
@@ -29,7 +30,7 @@
 @implementation ZKIDCardFloatingView
 
 - (instancetype)initWithType:(ZKIDCardType)type {
-    self = [super initWithFrame:[UIScreen mainScreen].bounds];
+    self = [super initWithFrame:[UIScreen.mainScreen currentBounds]];
     if (!self) {
         return nil;
     }
@@ -44,7 +45,7 @@
                                                                           cornerRadius:self.IDCardWindowLayer.cornerRadius];
     
     // 最外层背景
-    UIBezierPath *path = [UIBezierPath bezierPathWithRect:[UIScreen mainScreen].bounds];
+    UIBezierPath *path = [UIBezierPath bezierPathWithRect:[UIScreen.mainScreen currentBounds]];
     [path appendPath:transparentRoundedRectPath];
     [path setUsesEvenOddFillRule:YES];
     
@@ -128,5 +129,5 @@
   }
   return _resouceBundle;
 }
-                      
+                
 @end
