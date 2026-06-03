@@ -3,7 +3,7 @@ PODS:
   - ZKCategories (0.3.12):
     - ZKCategories/Core (= 0.3.12)
   - ZKCategories/Core (0.3.12)
-  - ZKIDCardCamera (0.1.2):
+  - ZKIDCardCamera (0.3.0):
     - Masonry
     - ZKCategories (~> 0.3.12)
 
@@ -22,8 +22,8 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   ZKCategories: 2fcc17b7a94758a128362d68a8276988731abf7f
-  ZKIDCardCamera: 9115c8d52e1bc85f37892d74e1ff3de46dc06ee4
+  ZKIDCardCamera: 07585da456e47d0b0694948b6a760302c84b05a8
 
-PODFILE CHECKSUM: 1de2b8ecababb9c308f8b604a2a2fdb16b69f194
+PODFILE CHECKSUM: a8119d2554ffe5293c646b1e99b31bf35856c73a
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.16.2

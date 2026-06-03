@@ -2,15 +2,12 @@
 //  ZKViewController.m
 //  ZKIDCardCamera
 //
-//  Created by deyang143@126.com on 09/21/2018.
-//  Copyright (c) 2018 deyang143@126.com. All rights reserved.
-//
 
 #import "ZKViewController.h"
 #import <Masonry/Masonry.h>
 #import <ZKIDCardCamera/ZKIDCardCameraController.h>
 
-@interface ZKViewController ()
+@interface ZKViewController () <ZKIDCardCameraControllerDelegate, ZKIDCardRecognitionProvider>
 
 @end
 
@@ -18,21 +15,53 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+}
+
+- (ZKIDCardCameraController *)makeCameraWithType:(ZKIDCardType)type {
+    ZKIDCardCameraConfiguration *config = [ZKIDCardCameraConfiguration defaultConfiguration];
+    // config.preferredLanguage = @"en";
+
+    ZKIDCardCameraController *controller = [[ZKIDCardCameraController alloc] initWithType:type configuration:config];
+    controller.delegate = self;
+    controller.recognitionProvider = self;
+    controller.modalPresentationStyle = UIModalPresentationFullScreen;
+    return controller;
 }
 
 #pragma mark - events Handler
 
 - (IBAction)front {
-    ZKIDCardCameraController *controller = [[ZKIDCardCameraController alloc] initWithType:ZKIDCardTypeFront];
-    controller.modalPresentationStyle = UIModalPresentationFullScreen;
-    [self presentViewController:controller animated:YES completion:nil];
+    [self presentViewController:[self makeCameraWithType:ZKIDCardTypeFront] animated:YES completion:nil];
 }
 
 - (IBAction)reverse:(id)sender {
-    ZKIDCardCameraController *controller = [[ZKIDCardCameraController alloc] initWithType:ZKIDCardTypeReverse];
-    controller.modalPresentationStyle = UIModalPresentationFullScreen;
-    [self presentViewController:controller animated:YES completion:nil];
+    [self presentViewController:[self makeCameraWithType:ZKIDCardTypeReverse] animated:YES completion:nil];
+}
+
+#pragma mark - ZKIDCardCameraControllerDelegate
+
+- (void)idCardCamera:(ZKIDCardCameraController *)camera didCaptureImage:(UIImage *)image cardType:(ZKIDCardType)cardType {
+    NSLog(@"拍摄完成 type=%lu image=%@", (unsigned long)cardType, image);
+}
+
+- (void)idCardCamera:(ZKIDCardCameraController *)camera
+didFinishRecognition:(id)result
+               error:(NSError *)error
+               image:(UIImage *)image
+            cardType:(ZKIDCardType)cardType {
+    NSLog(@"识别结果 %@ error=%@", result, error);
+}
+
+#pragma mark - ZKIDCardRecognitionProvider
+
+- (void)recognizeIDCardImage:(UIImage *)image
+                    cardType:(ZKIDCardType)cardType
+                  completion:(void (^)(id, NSError *))completion {
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        if (completion) {
+            completion(@{ @"mock": @"第三方识别结果", @"side": @(cardType) }, nil);
+        }
+    });
 }
 
 @end

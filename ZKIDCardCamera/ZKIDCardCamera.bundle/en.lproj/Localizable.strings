@@ -1,0 +1,11 @@
+"zk_idcard_hint_front" = "Align the front of your ID card and tap to capture";
+"zk_idcard_hint_reverse" = "Align the back of your ID card and tap to capture";
+"zk_idcard_retake" = "Retake";
+"zk_idcard_use_photo" = "Use Photo";
+"zk_idcard_camera_permission_title" = "Camera Access Required";
+"zk_idcard_camera_permission_message" = "Please allow camera access in Settings: Settings > Privacy > Camera";
+"zk_idcard_camera_permission_cancel" = "Not Now";
+"zk_idcard_camera_permission_confirm" = "OK";
+"zk_idcard_no_flash_title" = "Notice";
+"zk_idcard_no_flash_message" = "Your device does not have a flash.";
+"zk_idcard_alert_confirm" = "OK";

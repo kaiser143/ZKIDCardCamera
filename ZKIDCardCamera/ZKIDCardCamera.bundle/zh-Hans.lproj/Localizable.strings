@@ -1,0 +1,11 @@
+"zk_idcard_hint_front" = "对齐身份证正面并点击拍照";
+"zk_idcard_hint_reverse" = "对齐身份证背面并点击拍照";
+"zk_idcard_retake" = "重拍";
+"zk_idcard_use_photo" = "使用照片";
+"zk_idcard_camera_permission_title" = "请打开相机权限";
+"zk_idcard_camera_permission_message" = "请到设置中去允许应用访问您的相机: 设置-隐私-相机";
+"zk_idcard_camera_permission_cancel" = "不需要";
+"zk_idcard_camera_permission_confirm" = "确定";
+"zk_idcard_no_flash_title" = "提示";
+"zk_idcard_no_flash_message" = "您的设备没有闪光设备，不能提供手电筒功能，请检查";
+"zk_idcard_alert_confirm" = "确定";

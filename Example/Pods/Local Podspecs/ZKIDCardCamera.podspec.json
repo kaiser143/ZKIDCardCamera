@@ -1,8 +1,8 @@
 {
   "name": "ZKIDCardCamera",
-  "version": "0.1.2",
-  "summary": "A short description of ZKIDCardCamera.",
-  "description": "TODO: Add long description of the pod here.",
+  "version": "0.3.0",
+  "summary": "身份证拍摄 UI 组件，支持自定义、多语言与第三方 OCR 对接",
+  "description": "ZKIDCardCamera 是 iOS 身份证拍摄 UI 组件，提供取景框、拍照预览、点击/连续对焦与证件框裁剪。\n证件 OCR 识别由宿主通过 ZKIDCardRecognitionProvider 协议接入第三方 SDK。\n支持多语言（en / zh-Hans）、ZKIDCardCameraConfiguration 自定义 UI，最低 iOS 12.0。",
   "homepage": "https://github.com/kaiser143/ZKIDCardCamera",
   "license": {
     "type": "MIT",
@@ -13,18 +13,17 @@
   },
   "source": {
     "git": "https://github.com/kaiser143/ZKIDCardCamera.git",
-    "tag": "0.1.2"
+    "tag": "0.3.0"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "12.0"
   },
   "source_files": "ZKIDCardCamera/Classes/**/*",
+  "public_header_files": "ZKIDCardCamera/Classes/*.h",
   "requires_arc": true,
   "resources": "ZKIDCardCamera/ZKIDCardCamera.bundle",
   "dependencies": {
-    "Masonry": [
-
-    ],
+    "Masonry": [],
     "ZKCategories": [
       "~> 0.3.12"
     ]

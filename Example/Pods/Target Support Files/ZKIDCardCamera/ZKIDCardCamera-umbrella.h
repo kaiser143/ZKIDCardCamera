@@ -10,8 +10,14 @@
 #endif
 #endif
 
+#import "ZKIDCardCameraConfiguration.h"
 #import "ZKIDCardCameraController.h"
+#import "ZKIDCardCameraImageProcessor.h"
+#import "ZKIDCardCameraLocalization.h"
+#import "ZKIDCardCameraTypes.h"
 #import "ZKIDCardFloatingView.h"
+#import "ZKIDCardMaskGeometry.h"
+#import "ZKIDCardRecognitionProvider.h"
 
 FOUNDATION_EXPORT double ZKIDCardCameraVersionNumber;
 FOUNDATION_EXPORT const unsigned char ZKIDCardCameraVersionString[];
